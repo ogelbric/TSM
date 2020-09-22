@@ -51,10 +51,15 @@ kubectl apply -f ./authorize-psp-for-gc-service-accounts.yaml
 kubectl apply -f https://github.com/ogelbric/YAML/raw/master/authorize-psp-for-gc-service-accounts.yaml
 kubectl label ns default istio-injection=enabled
 kubectl apply -f ./rainsnowgw.yaml
+ubectl apply -f https://github.com/ogelbric/YAML/raw/master/rainsnowgw.yaml
 kubectl apply -f ./rainsnowvirtserv.yaml
+kubectl apply -f https://github.com/ogelbric/YAML/raw/master/rainsnowvirtserv.yaml
 kubectl apply -f ./weather.yaml
+kubectl apply -f https://github.com/ogelbric/YAML/raw/master/weather.yaml
 kubectl apply -f ./rain.yaml
+kubectl apply -f https://github.com/ogelbric/YAML/raw/master/rain.yaml
 kubectl apply -f ./yes.yaml
+kubectl apply -f https://github.com/ogelbric/YAML/raw/master/yes.yaml
 ```
 
 * Log onto local cluster 221
@@ -66,10 +71,15 @@ kubectl apply -f ./authorize-psp-for-gc-service-accounts.yaml
 kubectl apply -f https://github.com/ogelbric/YAML/raw/master/authorize-psp-for-gc-service-accounts.yaml
 kubectl label ns default istio-injection=enabled
 kubectl apply -f ./rainsnowgw.yaml
+kubectl apply -f https://github.com/ogelbric/YAML/raw/master/rainsnowgw.yaml
 kubectl apply -f ./rainsnowvirtserv.yaml
+kubectl apply -f https://github.com/ogelbric/YAML/raw/master/rainsnowvirtserv.yaml
 kubectl apply -f ./weather.yaml
+kubectl apply -f https://github.com/ogelbric/YAML/raw/master/weather.yaml
 kubectl apply -f ./rain2.yaml
+kubectl apply -f https://github.com/ogelbric/YAML/raw/master/rain2.yaml
 kubectl apply -f ./yes2.yaml
+kubectl apply -f https://github.com/ogelbric/YAML/raw/master/yes2.yaml
 ```
 
 

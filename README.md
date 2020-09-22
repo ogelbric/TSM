@@ -102,5 +102,26 @@ yes-1-d44d89d66-srw6w     2/2     Running   0          2m31s
 
 * Create the Global Name Space (demo.acme.com)
 
+![GitHub](GL1.png)
+
+![GitHub](GL2.png)
+
+![GitHub](GL3.png)
+
+![GitHub](GL4.png)
+
+![GitHub](GL5.png)
+
+
+* Run these curl commands to the service endpoints to generate traffic
+```
+[root@localhost ~]# curl 192.168.2.2/weather
+Weather:  Rain yes
+
+[root@localhost ~]# curl 192.168.2.3/weather
+Weather:  Snow no
+```
+
+![GitHub](GL_outcome.png)
 
 

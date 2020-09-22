@@ -149,5 +149,5 @@ Weather:  Rain no
 Weather:  Snow no
 ```
 
-![GitHub](GL_Cluster1.png)
+![GitHub](GL_CLuster1.png)
 

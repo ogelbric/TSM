@@ -10,8 +10,9 @@ Tanzu Service Mesh
 
 * The Kubernetes cluster creation is done as follows 
   * Log onto Supervisor Cluster
-  
-    ```/usr/local/bin/kubectl-vsphere login --vsphere-username administrator@vsphere.local --server=https://192.168.2.1 --insecure-skip-tls-verify```
+```
+/usr/local/bin/kubectl-vsphere login --vsphere-username administrator@vsphere.local --server=https://192.168.2.1 --insecure-skip-tls-verify
+```
   * Swap Context
   
 ```kubectl config use-context namespace1000```

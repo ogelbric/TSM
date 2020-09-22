@@ -10,15 +10,20 @@ Tanzu Service Mesh
 
 * The Kubernetes cluster creation is done as follows 
   * Log onto Supervisor Cluster
-    `/usr/local/bin/kubectl-vsphere login --vsphere-username administrator@vsphere.local --server=https://192.168.2.1 --insecure-skip-tls-verify`
+  
+    ```/usr/local/bin/kubectl-vsphere login --vsphere-username administrator@vsphere.local --server=https://192.168.2.1 --insecure-skip-tls-verify```
   * Swap Context
-    * `kubectl config use-context namespace1000`
+```kubectl config use-context namespace1000```
   * Local file for cluster creation
-    * `kubectl apply -f ./guestcluster1001GA-9workers.yaml.1168tkg21`
-    * `kubectl apply -f ./guestcluster1001GA-5workers.yaml.1168tkg221`
+```
+kubectl apply -f ./guestcluster1001GA-9workers.yaml.1168tkg21`
+kubectl apply -f ./guestcluster1001GA-5workers.yaml.1168tkg221
+```
   * Remote file for cluster creation
-    * `kubectl apply -f https://github.com/ogelbric/YAML/raw/master/guestcluster1001GA-9workers.yaml.1168tkg21`
-    * `kubectl apply -f https://github.com/ogelbric/YAML/raw/master/guestcluster1001GA-5workers.yaml.1168tkg221`
+```
+kubectl apply -f https://github.com/ogelbric/YAML/raw/master/guestcluster1001GA-9workers.yaml.1168tkg21
+kubectl apply -f https://github.com/ogelbric/YAML/raw/master/guestcluster1001GA-5workers.yaml.1168tkg221
+```
     
   * Check on the cluster creation and make sure they are in a running state
     * `kubectl get tanzukubernetesclusters`

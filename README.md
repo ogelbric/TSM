@@ -126,8 +126,27 @@ Weather:  Snow no
 
 ![GitHub](GL_outcome.png)
 
-* Now how to make it look like it is interconnected
+* Now how to make it look like it is interconnected cluster c21 talking to cluster c221
 
+```
+kubectl  edit deployment weather (change value: rain:8080 to rain.demo.acme.com:8080)
+kubectl  edit deployment rain    (change value: value: yes-1:8080 to yes-1.demo.acme.com:8080)
 
+```
+* Generate traffic to update the Global Name Space
 
+[root@localhost ~]# curl 192.168.2.2/weather
+Weather:  Rain yes
+
+[root@localhost ~]# curl 192.168.2.2/weather
+Weather:  Snow no
+
+[root@localhost ~]# curl 192.168.2.2/weather
+Weather:  Rain no
+
+[root@localhost ~]# curl 192.168.2.2/weather
+Weather:  Snow no
+```
+
+![GitHub](GL_Cluster1.png)
 

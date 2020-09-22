@@ -189,7 +189,7 @@ Weather:  Rain yes
 Weather:  Snow yes
 ```
 
-* Picture before organized
+* Resulting Tanzu Service Mesh of the weather app
 
 ![GitHub](GL_outcome2.png)
 

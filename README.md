@@ -193,6 +193,15 @@ Weather:  Snow yes
 
 ![GitHub](GL_outcome2.png)
 
+* Generate constant traffic 
 
+```
+watch curl 192.168.2.2/weather
+and/or seperate window
+watch curl 192.168.2.3/weather
+```
+
+
+Questions: ogelbrich@vmware.com
 
 

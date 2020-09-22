@@ -135,6 +135,7 @@ kubectl  edit deployment rain    (change value: value: yes-1:8080 to yes-1.demo.
 ```
 * Generate traffic to update the Global Name Space
 
+```
 [root@localhost ~]# curl 192.168.2.2/weather
 Weather:  Rain yes
 

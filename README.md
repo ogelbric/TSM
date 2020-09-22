@@ -115,13 +115,19 @@ yes-1-d44d89d66-srw6w     2/2     Running   0          2m31s
 
 * Run these curl commands to the service endpoints to generate traffic
 ```
+curl `kubectl get svc -A | grep ingressgateway | awk '{ print $5 }'`/weather
 curl 192.168.2.2/weather
 Weather:  Rain yes
 
+curl `kubectl get svc -A | grep ingressgateway | awk '{ print $5 }'`/weather
 curl 192.168.2.3/weather
 Weather:  Snow no
 ```
 
 ![GitHub](GL_outcome.png)
+
+* Now how to make it look like it is interconnected
+
+
 
 

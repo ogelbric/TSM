@@ -20,23 +20,22 @@ Tanzu Service Mesh
     * `kubectl apply -f https://github.com/ogelbric/YAML/raw/master/guestcluster1001GA-9workers.yaml.1168tkg21`
     * `kubectl apply -f https://github.com/ogelbric/YAML/raw/master/guestcluster1001GA-5workers.yaml.1168tkg221`
     
-* Check on the cluster creation and make sure they are in a running state
- * `kubectl get tanzukubernetesclusters`
+  * Check on the cluster creation and make sure they are in a running state
+    * `kubectl get tanzukubernetesclusters`
     NAME              | CONTROL PLANE   | WORKER   | DISTRIBUTION                      | AGE   | PHASE
     ------------------|-----------------|----------|-----------------------------------|-------|------
     tkg-cluster-21    | 1               | 9        | v1.16.8+vmware.1-tkg.3.60d2ffd    | 23h   | running
     tkg-cluster-221   | 1               | 5        | v1.16.8+vmware.1-tkg.3.60d2ffd    | 24h   | running
   
- * Log onto the TMS console (https://prod-2.nsxservicemesh.vmware.com/home/clusters)
-    * Import the 2 clusters that are running local
-    * `Infrastructure -> Onboard New Cluster`
-    * result should look similar to below picture   
+* Log onto the TMS console (https://prod-2.nsxservicemesh.vmware.com/home/clusters) and import the 2 clusters
+  * `Infrastructure -> Onboard New Cluster`
+  * result should look similar to below picture   
 
 ![GitHub](2clusters.png)
 
 * Log onto local cluster 21
- * `kubectl vsphere login --server 192.168.2.1 --vsphere-username administrator@vsphere.local --managed-cluster-namespace namespace1000 --managed-cluster-name tkg-cluster-21 --insecure-skip-tls-verify`
- * `kubectl config use-context tkg-cluster-2`
+  * `kubectl vsphere login --server 192.168.2.1 --vsphere-username administrator@vsphere.local --managed-cluster-namespace namespace1000 --managed-cluster-name tkg-cluster-21 --insecure-skip-tls-verify`
+  * `kubectl config use-context tkg-cluster-2`
  
 * Log onto local cluster 221
 

@@ -115,10 +115,10 @@ yes-1-d44d89d66-srw6w     2/2     Running   0          2m31s
 
 * Run these curl commands to the service endpoints to generate traffic
 ```
-[root@localhost ~]# curl 192.168.2.2/weather
+curl 192.168.2.2/weather
 Weather:  Rain yes
 
-[root@localhost ~]# curl 192.168.2.3/weather
+curl 192.168.2.3/weather
 Weather:  Snow no
 ```
 

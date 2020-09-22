@@ -148,8 +148,51 @@ Weather:  Rain no
 [root@localhost ~]# curl 192.168.2.2/weather
 Weather:  Snow no
 ```
+* Result in the Global Name Space
 
 ![GitHub](GL_CLuster1.png)
 
 * Now how to make it look like it is interconnected cluster c221 talking to cluster c21
+
+```
+kubectl  edit deployment weather (change value: rain:8080 to rain.demo.acme.com:8080)
+kubectl  edit deployment rain    (change value: value: yes-1:8080 to yes-1.demo.acme.com:8080)
+
+```
+
+* Generate traffic to update the Global Name Space
+
+```
+[root@localhost ~]# curl 192.168.2.3/weather
+Weather:  Snow no
+
+[root@localhost ~]# curl 192.168.2.3/weather
+Weather:  Rain no
+
+[root@localhost ~]# curl 192.168.2.3/weather
+Weather:  Snow yes
+
+[root@localhost ~]# curl 192.168.2.3/weather
+Weather:  Rain yes
+
+[root@localhost ~]# 
+[root@localhost ~]# curl 192.168.2.2/weather
+Weather:  Rain no
+
+[root@localhost ~]# curl 192.168.2.2/weather
+Weather:  Snow no
+
+[root@localhost ~]# curl 192.168.2.2/weather
+Weather:  Rain yes
+
+[root@localhost ~]# curl 192.168.2.2/weather
+Weather:  Snow yes
+```
+
+* Picture before organized
+
+
+
+
+
 

@@ -27,11 +27,20 @@ Tanzu Service Mesh
     tkg-cluster-21    | 1               | 9        | v1.16.8+vmware.1-tkg.3.60d2ffd    | 23h   | running
     tkg-cluster-221   | 1               | 5        | v1.16.8+vmware.1-tkg.3.60d2ffd    | 24h   | running
   
-  
-  
-    
-**Create 2 Clusters in TSM**
+ * Log onto the TMS console (https://prod-2.nsxservicemesh.vmware.com/home/clusters)
+  * Import the 2 clusters that are running local
+   * `Infrastructure -> Onboard New Cluster`
+   * result should look similar to below picture   
+
 ![GitHub](2clusters.png)
-test r
+
+* Log onto local cluster 21
+ * `kubectl vsphere login --server 192.168.2.1 --vsphere-username administrator@vsphere.local --managed-cluster-namespace namespace1000 --managed-cluster-name tkg-cluster-21 --insecure-skip-tls-verify`
+ * `kubectl config use-context tkg-cluster-2`
+ 
+* Log onto local cluster 221
+
+
+
 
 

@@ -22,9 +22,10 @@ Tanzu Service Mesh
     
 * Check on the cluster creation and make sure they are in a running state
  * `kubectl get tanzukubernetesclusters`
-   > NAME              CONTROL PLANE   WORKER   DISTRIBUTION                      AGE   PHASE
-   > tkg-cluster-21    1               9        v1.16.8+vmware.1-tkg.3.60d2ffd    23h   running
-   > tkg-cluster-221   1               5        v1.16.8+vmware.1-tkg.3.60d2ffd    24h   running
+    NAME              | CONTROL PLANE   | WORKER   | DISTRIBUTION                      | AGE   | PHASE
+    ------------------|-----------------|----------|-----------------------------------|-------|------
+    tkg-cluster-21    | 1               | 9        | v1.16.8+vmware.1-tkg.3.60d2ffd    | 23h   | running
+    tkg-cluster-221   | 1               | 5        | v1.16.8+vmware.1-tkg.3.60d2ffd    | 24h   | running
   
   
   

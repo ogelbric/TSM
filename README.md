@@ -41,7 +41,7 @@ Tanzu Service Mesh
 
 * Log onto local cluster 221
 
-```kubectl vsphere login --server 192.168.2.1 --vsphere-username administrator@vsphere.local --managed-cluster-namespace namespace1000 --managed-cluster-name tkg-cluster-221 --insecure-skip-tls-verify
+  ```kubectl vsphere login --server 192.168.2.1 --vsphere-username administrator@vsphere.local --managed-cluster-namespace namespace1000 --managed-cluster-name tkg-cluster-221 --insecure-skip-tls-verify
 kubectl config use-context tkg-cluster-221
 kubectl apply -f ./authorize-psp-for-gc-service-accounts.yaml
 kubectl apply -f https://github.com/ogelbric/YAML/raw/master/authorize-psp-for-gc-service-accounts.yaml```

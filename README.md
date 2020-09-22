@@ -3,9 +3,10 @@ Tanzu Service Mesh
 
 **Creating a Tanzu Service Mesh like this:**
 
-![GitHub](WeatherRainSnowYesNo.png)
+![GitHub](GlobalNameSpace.png)
 
-test test
+**Create 2 Clusters in TSM**
+![GitHub](2clusters.png)
 test r
 
 

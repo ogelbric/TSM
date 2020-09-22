@@ -151,3 +151,5 @@ Weather:  Snow no
 
 ![GitHub](GL_CLuster1.png)
 
+* Now how to make it look like it is interconnected cluster c221 talking to cluster c21
+

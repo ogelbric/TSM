@@ -28,9 +28,9 @@ Tanzu Service Mesh
     tkg-cluster-221   | 1               | 5        | v1.16.8+vmware.1-tkg.3.60d2ffd    | 24h   | running
   
  * Log onto the TMS console (https://prod-2.nsxservicemesh.vmware.com/home/clusters)
-  * Import the 2 clusters that are running local
-   * `Infrastructure -> Onboard New Cluster`
-   * result should look similar to below picture   
+    * Import the 2 clusters that are running local
+    * `Infrastructure -> Onboard New Cluster`
+    * result should look similar to below picture   
 
 ![GitHub](2clusters.png)
 

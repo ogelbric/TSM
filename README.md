@@ -13,6 +13,7 @@ Tanzu Service Mesh
   
     ```/usr/local/bin/kubectl-vsphere login --vsphere-username administrator@vsphere.local --server=https://192.168.2.1 --insecure-skip-tls-verify```
   * Swap Context
+  
 ```kubectl config use-context namespace1000```
   * Local file for cluster creation
 ```

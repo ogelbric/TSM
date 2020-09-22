@@ -82,5 +82,29 @@ kubectl apply -f ./yes2.yaml
 kubectl apply -f https://github.com/ogelbric/YAML/raw/master/yes2.yaml
 ```
 
+* Check on the deployment
+
+'''
+kubectl get virtualservices
+
+NAME       GATEWAYS         HOSTS   AGE
+rainsnow   [acme-gateway]   [*]     76s
+
+
+kubectl get gw
+NAME               AGE
+rainsnow-gateway   108s
+
+kubectl get pods 
+NAME                      READY   STATUS    RESTARTS   AGE
+rain-77d69c9df-ccl7m      2/2     Running   0          2m37s
+weather-95dd777cc-wkxnc   2/2     Running   0          2m46s
+yes-1-d44d89d66-srw6w     2/2     Running   0          2m31s
+
+
+'''
+
+* Create the Global Name Space (demo.acme.com)
+
 
 

@@ -199,6 +199,11 @@ Weather:  Snow yes
 watch curl 192.168.2.2/weather
 and/or seperate window
 watch curl 192.168.2.3/weather
+
+or both in the same window
+
+watch -d ' curl 192.168.2.2/weather; curl 192.168.2.3/weather '
+
 ```
 
 

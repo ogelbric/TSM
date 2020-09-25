@@ -206,6 +206,20 @@ watch -d ' curl 192.168.2.2/weather; curl 192.168.2.3/weather '
 
 ```
 
+* Install a nginx load balancer in a different K8 cluster inforont of the 2 weather services
+
+
+```
+kubectl apply -f https://github.com/ogelbric/YAML/raw/master/nginx-LoadBalancer-weather.yaml
+
+Make sure thsi section in the YAML relects your weather ingress IP's
+
+      upstream weather {
+          server 192.168.2.3:80;
+          server 192.168.2.2:80;
+      }
+
+```
 
 Questions: ogelbrich@vmware.com
 

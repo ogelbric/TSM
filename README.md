@@ -225,16 +225,21 @@ Make sure this section in the YAML relects your weather ingress IP's
 
 ```
 kubectl apply -f ./authorize-psp-for-gc-service-accounts.yaml
-kubectl apply -f ./nginx-LoadBalancer-weather.yaml
 Add cluster to TSM
 kubectl apply -f https://prod-2.nsxservicemesh.vmware.com/cluster-registration/k8s/v1.5.6/k8s-registration.yaml
 kubectl -n allspark create secret generic cluster-token --from-literal=token=eyJh......
 kubectl label ns default istio-injection=enabled
 Add new cluster (default ns) to global TSM name space
 kubectl apply -f ./LBrainsnowGW.yaml
+kubectl apply -f ./LBrainsnowvirtserv.yaml
+kubectl apply -f ./LB-TSMnginx-LoadBalancer-weather.yaml.    (this does not have the service loadbalancer in it vs. from the above version)
 
 ```
 
-Questions: ogelbrich@vmware.com
+* Resulting picture should look like this: 
+
+![GitHub](nginxLB.png)
+
+* Questions: ogelbrich@vmware.com
 
 

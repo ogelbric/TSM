@@ -238,6 +238,7 @@ And lets generate some traffic or we will see no picures in TSM:
 
 watch curl `kubectl get svc -A | grep istio-ingressgateway | awk '{ print $5 }'`/weather
 
+(Note! The out going IP's from ngix LB some how the traffic does not get connected properly in the below picture, but atleast the all the services ae in the global name space)
 ```
 
 * Resulting picture should look like this: 

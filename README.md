@@ -206,7 +206,7 @@ watch -d ' curl 192.168.2.2/weather; curl 192.168.2.3/weather '
 
 ```
 
-* Install a nginx load balancer in a different K8 cluster inforont of the 2 weather services
+* Install a nginx load balancer in a different K8 cluster infront of the two weather services
 
 
 ```
@@ -218,6 +218,20 @@ Make sure this section in the YAML relects your weather ingress IP's
           server 192.168.2.3:80;
           server 192.168.2.2:80;
       }
+
+```
+
+* If the nginx service is also desired in TSM then this can be deployed
+
+```
+kubectl apply -f ./authorize-psp-for-gc-service-accounts.yaml
+kubectl apply -f ./nginx-LoadBalancer-weather.yaml
+Add cluster to TSM
+kubectl apply -f https://prod-2.nsxservicemesh.vmware.com/cluster-registration/k8s/v1.5.6/k8s-registration.yaml
+kubectl -n allspark create secret generic cluster-token --from-literal=token=eyJh......
+kubectl label ns default istio-injection=enabled
+Add new cluster (default ns) to global TSM name space
+kubectl apply -f ./LBrainsnowGW.yaml
 
 ```
 

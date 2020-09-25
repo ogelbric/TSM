@@ -234,6 +234,10 @@ kubectl apply -f ./LBrainsnowGW.yaml
 kubectl apply -f ./LBrainsnowvirtserv.yaml
 kubectl apply -f ./LB-TSMnginx-LoadBalancer-weather.yaml.    (this does not have the service loadbalancer in it vs. from the above version)
 
+And lets generate some traffic or we will see no picures in TSM:
+
+watch curl `kubectl get svc -A | grep istio-ingressgateway | awk '{ print $5 }'`/weather
+
 ```
 
 * Resulting picture should look like this: 

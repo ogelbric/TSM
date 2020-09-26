@@ -266,6 +266,13 @@ watch curl `kubectl get svc -A | grep istio-ingressgateway | awk '{ print $5 }'`
 
 ![GitHub](nginxlbwithTSMserviceconnection.png)
 
+```
+And if you dont line the watch commands and tp pay tribute to Nathan here is a while loop: 
+
+while true; do curl 192.168.2.8/weather; sleep 2; done
+
+```
+
 
 * Questions: ogelbrich@vmware.com
 

@@ -206,8 +206,14 @@ watch -d ' curl 192.168.2.2/weather; curl 192.168.2.3/weather '
 
 ```
 
-* Install a nginx load balancer in a different K8 cluster infront of the two weather services
-
+* Options to load balance infront of the two istio ingress IP's
+   * Add the two IP's to external DNS
+   * Create a load balancer some where (b)
+   * Create a load balancer in TSM (c)
+   * Create a load balancer in TSM and connect back end to the ingress (d)
+   * Create an AVI load balancer somewhere 
+   
+* Install nginx load balancer in different K8 cluster and config map of the two weather services (b)
 
 ```
 kubectl apply -f https://github.com/ogelbric/YAML/raw/master/nginx-LoadBalancer-weather.yaml
@@ -221,29 +227,41 @@ Make sure this section in the YAML relects your weather ingress IP's
 
 ```
 
-* If the nginx service is also desired in TSM then this can be deployed
+* The nginx service in TSM (c)
 
 ```
-kubectl apply -f ./authorize-psp-for-gc-service-accounts.yaml
+kubectl apply -f https://github.com/ogelbric/YAML/raw/master/authorize-psp-for-gc-service-accounts.yaml
 Add cluster to TSM
 kubectl apply -f https://prod-2.nsxservicemesh.vmware.com/cluster-registration/k8s/v1.5.6/k8s-registration.yaml
 kubectl -n allspark create secret generic cluster-token --from-literal=token=eyJh......
 kubectl label ns default istio-injection=enabled
 Add new cluster (default ns) to global TSM name space
-kubectl apply -f ./LBrainsnowGW.yaml
-kubectl apply -f ./LBrainsnowvirtserv.yaml
-kubectl apply -f ./LB-TSMnginx-LoadBalancer-weather.yaml.    (this does not have the service loadbalancer in it vs. from the above version)
+kubectl apply -f https://github.com/ogelbric/YAML/raw/master/LBrainsnowGW.yaml
+kubectl apply -f https://github.com/ogelbric/YAML/raw/master/LBrainsnowvirtserv.yaml
+kubectl apply -f https://github.com/ogelbric/YAML/raw/master/LB-TSMnginx-LoadBalancer-weather.yaml (this does not have the service loadbalancer in it vs. the  version above)
 
 And lets generate some traffic or we will see no picures in TSM:
 
 watch curl `kubectl get svc -A | grep istio-ingressgateway | awk '{ print $5 }'`/weather
 
-(Note! The out going IP's from ngix LB some how the traffic does not get connected properly in the below picture, but atleast the all the services ae in the global name space)
+(Note! The out going IP's from ngix LB some how the traffic does not get connected in the below picture, but the all the services are in the global name space)
 ```
 
 * Resulting picture should look like this: 
 
 ![GitHub](nginxLB.png)
+
+* The nginx service in TSM using the istio services in the nginx config map (c)
+
+```
+kubectl apply -f https://github.com/ogelbric/YAML/raw/master/LB-TSMnginx-LoadBalancer-weather-with-istioConnection.yaml
+
+And lets not forget to generate traffic for TSM to work:
+
+watch curl `kubectl get svc -A | grep istio-ingressgateway | awk '{ print $5 }'`/weather
+
+```
+
 
 * Questions: ogelbrich@vmware.com
 

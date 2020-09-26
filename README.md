@@ -262,6 +262,10 @@ watch curl `kubectl get svc -A | grep istio-ingressgateway | awk '{ print $5 }'`
 
 ```
 
+* Resulting picture should look like this: 
+
+![GitHub](nginxlbwithTSMserviceconnection.png)
+
 
 * Questions: ogelbrich@vmware.com
 

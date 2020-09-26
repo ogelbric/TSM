@@ -273,6 +273,7 @@ while true; do curl 192.168.2.8/weather; sleep 2; done
 
 ```
 
+![GitHub](WhileLoopTraffic.png)
 
 * Questions: ogelbrich@vmware.com
 

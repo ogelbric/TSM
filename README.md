@@ -18,7 +18,7 @@ Tanzu Service Mesh
 ```kubectl config use-context namespace1000```
   * Local file for cluster creation
 ```
-kubectl apply -f ./guestcluster1001GA-9workers.yaml.1168tkg21`
+kubectl apply -f ./guestcluster1001GA-9workers.yaml.1168tkg21
 kubectl apply -f ./guestcluster1001GA-5workers.yaml.1168tkg221
 ```
   * Remote file for cluster creation
@@ -46,7 +46,7 @@ kubectl apply -f https://github.com/ogelbric/YAML/raw/master/guestcluster1001GA-
 
 ```
 kubectl vsphere login --server 192.168.2.1 --vsphere-username administrator@vsphere.local --managed-cluster-namespace namespace1000 --managed-cluster-name tkg-cluster-21 --insecure-skip-tls-verify
-kubectl config use-context tkg-cluster-2`
+kubectl config use-context tkg-cluster-2
 kubectl apply -f ./authorize-psp-for-gc-service-accounts.yaml
 kubectl apply -f https://github.com/ogelbric/YAML/raw/master/authorize-psp-for-gc-service-accounts.yaml
 kubectl label ns default istio-injection=enabled

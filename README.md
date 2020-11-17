@@ -51,7 +51,7 @@ kubectl apply -f ./authorize-psp-for-gc-service-accounts.yaml
 kubectl apply -f https://github.com/ogelbric/YAML/raw/master/authorize-psp-for-gc-service-accounts.yaml
 kubectl label ns default istio-injection=enabled
 kubectl apply -f ./rainsnowgw.yaml
-ubectl apply -f https://github.com/ogelbric/YAML/raw/master/rainsnowgw.yaml
+kubectl apply -f https://github.com/ogelbric/YAML/raw/master/rainsnowgw.yaml
 kubectl apply -f ./rainsnowvirtserv.yaml
 kubectl apply -f https://github.com/ogelbric/YAML/raw/master/rainsnowvirtserv.yaml
 kubectl apply -f ./weather.yaml

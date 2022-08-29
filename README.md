@@ -58,7 +58,7 @@ kubectl apply -f ./weather.yaml
 kubectl apply -f https://github.com/ogelbric/YAML/raw/master/weather.yaml
 kubectl apply -f ./rain1.yaml
 kubectl apply -f https://github.com/ogelbric/YAML/raw/master/rain.yaml
-kubectl apply -f ./yes.yaml
+kubectl apply -f ./yes1.yaml
 kubectl apply -f https://github.com/ogelbric/YAML/raw/master/yes.yaml
 ```
 

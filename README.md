@@ -306,6 +306,9 @@ istio-system                         istio-ingressgateway                     Lo
 istio-system                         istio-telemetry                          ClusterIP      10.96.10.183    <none>         9091/TCP,15004/TCP,15014/TCP,42422/TCP       77d
 istio-system                         istiod                                   ClusterIP      10.96.49.168    <none>         15010/TCP,15012/TCP,443/TCP,15014/TCP        77d
 
+[root@centosrouter 8u0]# k describe ns orftsmparis | grep injection
+Labels:       istio-injection=enabled
+
 ```
 
 

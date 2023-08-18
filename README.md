@@ -305,6 +305,7 @@ istio-system                         istio-egressgateway                      Cl
 istio-system                         istio-ingressgateway                     LoadBalancer   10.96.92.190    192.168.4.79   15021:31291/TCP,80:30970/TCP,443:31282/TCP   77d
 istio-system                         istio-telemetry                          ClusterIP      10.96.10.183    <none>         9091/TCP,15004/TCP,15014/TCP,42422/TCP       77d
 istio-system                         istiod                                   ClusterIP      10.96.49.168    <none>         15010/TCP,15012/TCP,443/TCP,15014/TCP        77d
+
 ```
 
 

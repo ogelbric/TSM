@@ -276,5 +276,29 @@ while true; do curl 192.168.2.8/weather; sleep 2; done
 ![GitHub](WhileLoopTraffic.png)
 
 * Questions: ogelbrich@vmware.com
- 
+
+Trouble shooting
+```
+[root@centosrouter 8u0]# k get vs -A
+NAMESPACE      NAME                       GATEWAYS                       HOSTS                                                                               AGE
+istio-system   nsxsm.gns.orfgns.rain      ["nsxsm-gns-orfgns-rain"]      ["*.rain.demo.acme.com"]                                                            67d
+istio-system   nsxsm.gns.orfgns.sun       ["nsxsm-gns-orfgns-sun"]       ["*.sun.demo.acme.com"]                                                             67d
+istio-system   nsxsm.gns.orfgns.weather   ["nsxsm-gns-orfgns-weather"]   ["*.weather.demo.acme.com"]                                                         67d
+istio-system   nsxsm.gns.orfgns.yes-1     ["nsxsm-gns-orfgns-yes-1"]     ["*.yes-1.demo.acme.com"]                                                           67d
+orftsmparis    nsxsm.gns.orfgns.rain                                     ["rain.demo.acme.com","rain.orftsmparis.svc.cluster.local","243.39.26.88"]          77d
+orftsmparis    nsxsm.gns.orfgns.sun                                      ["sun.demo.acme.com","sun.orftsmparis.svc.cluster.local","255.44.161.21"]           77d
+orftsmparis    nsxsm.gns.orfgns.weather                                  ["weather.demo.acme.com","weather.orftsmparis.svc.cluster.local","247.59.64.115"]   77d
+orftsmparis    nsxsm.gns.orfgns.yes-1                                    ["yes-1.demo.acme.com","yes-1.orftsmparis.svc.cluster.local","248.147.12.86"]       77d
+orftsmparis    rainsnow                   ["acme-gateway"]               ["*"]                                                                               77d
+[root@centosrouter 8u0]# k get gw -A
+NAMESPACE      NAME                       AGE
+istio-system   istio-egressgateway        77d
+istio-system   istio-ingressgateway       77d
+istio-system   nsxsm-gns-orfgns-rain      77d
+istio-system   nsxsm-gns-orfgns-sun       77d
+istio-system   nsxsm-gns-orfgns-weather   77d
+istio-system   nsxsm-gns-orfgns-yes-1     77d
+orftsmparis    acme-gateway               77d
+```
+
 
